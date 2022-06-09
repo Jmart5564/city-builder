@@ -14,11 +14,61 @@
 
 <body>
     <header>
-        <img src="assets/html_css_js.png">
-        <h1>Web UI Project</h1>
+        <h1>City Builder</h1>
     </header>
 
     <main>
+        <section id="city-inputs">
+            <p>
+                <label>
+                    City Name: 
+                    <input id="name-input" value="Name City Here">
+                </label>
+            </p>
+            <p>
+                Choose A Climate:
+                <select id="climate-input">
+                    <option>Fire Nation</option>
+                    <option>Air Nomads</option>
+                    <option>Earth Kingdom</option>
+                    <option>Water Tribe</option>
+                </select>
+            </p>
+            <p>
+                Choose the Architecture:
+                <select id="architecture-input">
+                    <option>Cabin</option>
+                    <option>Tree House</option>
+                    <option>Castle</option>
+                    <option>Tent</option>
+                </select> 
+            </p>
+            <p>
+                <label>
+                    Add a Slogan:
+                    <input id="slogan-input" value="Type Slogan Here">
+                </label>
+            </p>
+        </section>
+
+        <section id="add-city-section">
+            <button>Add City</button>
+        </section>
+
+        <section id="city-output">
+            <div id="city-parts">
+                <p id="name-output"></p>
+                <img>
+                <img>
+                <p id="description-output"></p>
+            </div>
+        </section>
+
+        <section id="slogan-output">
+            <ul>
+                
+            </ul>
+        </section>
 
     </main>
 
