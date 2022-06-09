@@ -44,6 +44,47 @@ function displayCity() {
 }
 
 
-const addPhraseSection = document.getElementById('slogan-input');
-const phraseInput = addPhraseSection.querySelector('input');
+const addSloganSection = document.getElementById('slogan-input');
+const sloganInput = addSloganSection.querySelector('input');
+const sloganButton = addSloganSection.querySelector('button');
 
+function handleAddSlogan() {
+    const slogan = sloganInput.value;
+    if (slogan === '') {
+        return;
+    }
+
+    defaultCity.slogans.push(slogan);
+    displaySlogans();
+    sloganInput.value = '';
+    sloganInput.focus();
+}
+
+
+sloganButton.addEventListener('click', () => {
+    handleAddSlogan();
+});
+
+sloganInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleAddSlogan();
+    }
+});
+
+const sloganOutput = document.getElementById('slogan-output');
+const sloganList = sloganOutput.querySelector('ul');
+
+function displaySlogans() {
+    sloganList.innerHTML = '';
+
+    for (const slogan of defaultCity.slogans) {
+        const li = document.createElement('li');
+        li.textContent = slogan;
+        sloganList.append(li);
+    }
+}
+
+//page load actions
+
+displayCity();
+displaySlogans();
