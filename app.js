@@ -18,9 +18,32 @@
 function getDefaultCity() {
     const defaultCity = {
         name: '',
-        climate: '',
-        architecture: '',
+        climate: 'cave',
+        architecture: 'tent',
         slogans: []
     };
+    return defaultCity;
 }
+
+const cityInputs = document.getElementById('city-inputs');
+const [climateSelect, architectureSelect] = cityInputs.querySelectorAll('select');
+
+climateSelect.addEventListener('change' () => {
+    defaultCity.climate = climateSelect.value;
+    //add displayCity function later
+});
+
+architectureSelect.addEventListener('change' () => {
+    defaultCity.architecture = architectureSelect.value;
+    //add displayCity function later
+});
+
+function displayCity() {
+    climateSelect.value = defaultCity.climate;
+    architectureSelect.value = defaultCity.architecture;
+}
+
+
+const addPhraseSection = document.getElementById('slogan-input');
+const phraseInput = addPhraseSection.querySelector('input');
 
