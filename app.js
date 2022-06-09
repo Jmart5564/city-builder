@@ -15,4 +15,12 @@
 
 // page load actions
 
+function getDefaultCity() {
+    const defaultCity = {
+        name: '',
+        climate: '',
+        architecture: '',
+        slogans: []
+    };
+}
 
