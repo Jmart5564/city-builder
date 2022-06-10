@@ -28,19 +28,19 @@
             <p>
                 Choose A Climate:
                 <select id="climate-input">
-                    <option>Beach</option>
-                    <option>Cave</option>
-                    <option>Forest</option>
-                    <option>Snow</option>
+                    <option value="beach" src="\assets\beach.jpg">Beach</option>
+                    <option value="cave" src="\assets\cave.webp">Cave</option>
+                    <option value="forest" src="\assets\forest.webp">Forest</option>
+                    <option value="snow" src="\assets\Snow.jpg">Snow</option>
                 </select>
             </p>
             <p>
                 Choose the Architecture:
                 <select id="architecture-input">
-                    <option value="cabin">Cabin</option>
-                    <option value="treehouse">Tree House</option>
-                    <option value="castle">Castle</option>
-                    <option value="tent">Tent</option>
+                    <option value="cabin" src="\assets\cabin.jpg" >Cabin</option>
+                    <option value="treehouse" src="\assets\treehouse.png">Tree House</option>
+                    <option value="castle" src="assets\castle.png">Castle</option>
+                    <option value="tent" src="assets\tent.png">Tent</option>
                 </select> 
             </p>
             </section>
@@ -62,8 +62,8 @@
         <section id="city-output">
             <div id="city-parts">
                 <p id="name-output">City Name Appears Here</p>
-                <img src="\assets\cave.webp">
-                <img src="\assets\tent.png">
+                <img id="climate-output" src="\assets\cave.webp">
+                <img id="architecture-output" src="\assets\tent.png">
                 <p id="description-output"></p>
             </div>
         </section>

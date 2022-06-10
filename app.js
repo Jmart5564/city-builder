@@ -14,27 +14,36 @@
     // optional: handle functions for shared event handler logic
 
 // page load actions
+const defaultCity = {
+    name: '',
+    climate: 'cave',
+    architecture: 'tent',
+    slogans: []
+};
 
 function getDefaultCity() {
-    const defaultCity = {
-        name: '',
-        climate: 'cave',
-        architecture: 'tent',
-        slogans: []
-    };
     return defaultCity;
 }
 
-const cityInputs = document.getElementById('city-inputs');
-const [climateSelect, architectureSelect] = cityInputs.querySelectorAll('select');
+let city = defaultCity;
+const cities = [];
 
-climateSelect.addEventListener('change' () => {
-    defaultCity.climate = climateSelect.value;
+//const cityInputs = document.getElementById('city-inputs');
+//const [climateSelect, architectureSelect] = cityInputs.querySelectorAll('select');
+const climateSelect = document.getElementById('climate-input');
+const architectureSelect = document.getElementById('architecture-input');
+const climateOutput = document.getElementById('climate-output');
+const architectureOutput = document.getElementById('architecture-output');
+
+
+climateSelect.addEventListener('change', () => {
+    const src = '' + climateSelect.value;
+    climateOutput.src = src;
     //add displayCity function later
 });
 
-architectureSelect.addEventListener('change' () => {
-    defaultCity.architecture = architectureSelect.value;
+architectureSelect.addEventListener('change', () => {
+    city.architecture = architectureSelect.value;
     //add displayCity function later
 });
 
@@ -54,7 +63,7 @@ function handleAddSlogan() {
         return;
     }
 
-    defaultCity.slogans.push(slogan);
+    city.slogans.push(slogan);
     displaySlogans();
     sloganInput.value = '';
     sloganInput.focus();
