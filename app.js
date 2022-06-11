@@ -25,31 +25,35 @@ function getDefaultCity() {
     return defaultCity;
 }
 
-let city = defaultCity;
+let city = getDefaultCity();
 const cities = [];
 
-//const cityInputs = document.getElementById('city-inputs');
-//const [climateSelect, architectureSelect] = cityInputs.querySelectorAll('select');
-const climateSelect = document.getElementById('climate-input');
-const architectureSelect = document.getElementById('architecture-input');
-const climateOutput = document.getElementById('climate-output');
-const architectureOutput = document.getElementById('architecture-output');
+const cityInputs = document.getElementById('city-inputs');
+const [climateSelect, architectureSelect] = cityInputs.querySelectorAll('select');
+//const climateSelect = document.getElementById('climate-input');
+//const architectureSelect = document.getElementById('architecture-input');
+//const climateOutput = document.getElementById('climate-output');
+//const architectureOutput = document.getElementById('architecture-output');
 
 
 climateSelect.addEventListener('change', () => {
-    const src = '' + climateSelect.value;
-    climateOutput.src = src;
-    //add displayCity function later
+    city.climate = climateSelect.value;
+    displayCity();
 });
 
 architectureSelect.addEventListener('change', () => {
     city.architecture = architectureSelect.value;
-    //add displayCity function later
+    displayCity();
 });
 
+const cityOutput = document.getElementById('city-output');
+const [climateOutput, architectureOutput] = cityOutput.querySelectorAll('img');
+
 function displayCity() {
-    climateSelect.value = defaultCity.climate;
-    architectureSelect.value = defaultCity.architecture;
+    climateOutput.src = 'assets/' + city.climate;
+    architectureOutput.src = 'assets/' + city.architecture;
+    //climateSelect.value = defaultCity.climate;
+    //architectureSelect.value = defaultCity.architecture;
 }
 
 
